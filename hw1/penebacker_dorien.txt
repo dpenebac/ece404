@@ -1,0 +1,11 @@
+Recovered Plaintext Quote: 
+Sir Lewis Carl Davidson Hamilton (born 7 January 1985) is a British racing driver currently competing in Formula One, driving for Mercedes-AMG Petronas Formula One Team. In Formula One, Hamilton has won a joint-record seven World Drivers' Championship titles (tied with Michael Schumacher), and holds the records for the most wins (103), pole positions (103), and podium finishes (191), among many others. Statistically considered as the most successful driver in Formula One history.
+
+Recovered Encryption Key:
+4040
+
+Code Explanantion:
+The function cryptBreak, takes an input file containing cipher text and an input key in BitVector formatting. It then uses the decryption algorithm given in DecryptForFun, explained below, to decrypt the cipher text found in the cipher file, and return the plaintext. The main function simply iterates through every integer from 0 - 2 ^ 16, then converts the key into a BitVector, and runs it through the cryptBreak function. If Sir Lewis is found, it breaks the while loop and prints the plaintext message.
+
+DecryptForFun Code Explanantion:
+Starting with the passphrase, "Hopes and dreams of a million years," and a block size of 16, we convert the passphrase into a bitarray with size of 16. We then open the file and recieve the cipher text from the file and convert its value into a BitVector. We then carry out the differntial XORing of the encrypted bit vector and the key bitvector to decrypt each block and append the decrpyted block to a new BitVector. And finally by using the .get_text_from_bitvector() function, we extract the plaintext from the new bitvector which is returned.
